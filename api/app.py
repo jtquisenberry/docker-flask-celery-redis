@@ -26,6 +26,10 @@ def check_task(task_id: str) -> str:
 @app.route('/health_check')
 def health_check() -> Response:
     return jsonify("OK")
+    
+@app.route('/')
+def main() -> Response:
+    return str("Usages:<p>/</p><p>/add/&lt;int:param1&gt;/&lt;int:param2&gt;</p><p>/check/&lt;string:task_id&gt;</p><p>/health_check</p>")
 
 
 if __name__ == '__main__':
